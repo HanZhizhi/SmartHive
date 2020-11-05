@@ -1,6 +1,7 @@
 package com.space.smarthive.myhives;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.space.smarthive.R;
+import com.space.smarthive.viewer.WebViewer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,13 +36,10 @@ class HiveHolder extends RecyclerView.ViewHolder{
 
 
 public class HiveListAdapter extends RecyclerView.Adapter<HiveHolder> {
+    private static final String TAG = "HiveListAdapter";
+
     private List<BleBean> data;
     private Context context;
-    private OnItemClickListener itemClickListener;
-
-    interface OnItemClickListener{
-        void onItemClicked(int position);
-    }
 
 
     public HiveListAdapter(RecyclerView rc){
@@ -63,15 +62,11 @@ public class HiveListAdapter extends RecyclerView.Adapter<HiveHolder> {
         holder.bleAddress.setText(data.get(position).device.getAddress());
 
         holder.itemView.setOnClickListener(v -> {
-            if (itemClickListener != null){
-                itemClickListener.onItemClicked(position);
-            }
+            WebViewer.start(context, "Dsd", "dsds");
+            Log.i(TAG, "onBindViewHolder: hive item clicked");
         });
     }
 
-    public void setItemClickListener(OnItemClickListener l){
-        this.itemClickListener = l;
-    }
 
     public void addDevice(BleBean l){
         if (!data.contains(l)){

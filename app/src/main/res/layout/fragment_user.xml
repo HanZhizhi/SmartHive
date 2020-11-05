@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".info.InfoFragment">
+    tools:context=".info.InfoFragment"
+    android:background="@color/darkWhite">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="@dimen/navBarHeight"
-        android:background="@color/purple_500"
+        android:background="@color/darkWhite"
         app:title="我的"
-        app:titleTextColor="@color/pureWhite"
+        app:titleTextColor="@color/black"
         app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
     </androidx.appcompat.widget.Toolbar>
 

@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.space.smarthive.R;
 import com.space.smarthive.data.Feed;
+import com.space.smarthive.hivemanage.HivemanActivity;
+import com.space.smarthive.viewer.WebViewer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +60,10 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedViewHolder>{
     public void onBindViewHolder(@NonNull FeedViewHolder holder, int position) {
         holder.tvTitle.setText(data.get(position).title);
         holder.tvContent.setText(data.get(position).content);
+
+        holder.itemView.setOnClickListener(v -> {
+            WebViewer.start(context, data.get(position).url, data.get(position).title);
+        });
     }
 
     @Override

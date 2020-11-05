@@ -1,9 +1,12 @@
 package com.space.smarthive.info;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,7 +44,6 @@ public class InfoFragment extends Fragment implements InfoContract.View{
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
 
     private InfoContract.Presenter mPresenter;
 
@@ -89,9 +91,9 @@ public class InfoFragment extends Fragment implements InfoContract.View{
 
         rvFeeds = viewBinding.fragInfoRecyclerView;
         rvFeeds.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false));
+        // rvFeeds.addItemDecoration(new RvDec());
+        rvFeeds.addItemDecoration(new DividerItemDecoration(context, DividerItemDecoration.VERTICAL));
 
-
-        //feedsAdapter.setData(feeds);
         feedsAdapter = new FeedsAdapter(rvFeeds);
         rvFeeds.setAdapter(feedsAdapter);
 

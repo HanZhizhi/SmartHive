@@ -121,12 +121,6 @@ public class HivesFragment extends Fragment {
         rvHives = viewBinding.rvFragHives;
         rvHives.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false));
         rvAdapter = new HiveListAdapter(rvHives);
-        rvAdapter.setItemClickListener(position -> {
-            Bundle bundle = new Bundle();
-            bundle.putInt("dsd", position);
-            startActivity(new Intent(context, HivemanActivity.class));
-        });
-
         rvHives.setAdapter(rvAdapter);
 
         return viewBinding.getRoot();

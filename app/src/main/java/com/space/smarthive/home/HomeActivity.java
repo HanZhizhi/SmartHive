@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 
+import com.gyf.immersionbar.ImmersionBar;
 import com.space.smarthive.R;
 import com.space.smarthive.databinding.ActivityHomeBinding;
 import com.space.smarthive.info.InfoFragment;
@@ -39,6 +40,13 @@ public class HomeActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_home);
         viewBinding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(viewBinding.getRoot());
+
+        ImmersionBar.with(this)
+                .statusBarColor(R.color.darkWhite)
+                .navigationBarColor(R.color.darkWhite)
+                .fitsSystemWindows(true)
+                .autoDarkModeEnable(true)
+                .init();
 
         initViews();
 
