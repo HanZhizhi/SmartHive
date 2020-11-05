@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".myhives.HivesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/hiveman_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/navBarHeight"
+            android:background="@color/purple_500"
+            app:title="蜂箱管理"
+            app:titleTextColor="@color/pureWhite"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/hiveman_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/hiveman_icon"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:background="#999"
+            android:alpha="0.9"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hiveman_logo"
+            android:layout_marginTop="10dp"/>
+
+        <com.space.smarthive.views.HiveInfoItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:name="温度"
+            app:value="31.2摄氏度"
+            app:logo="@id/hiveman_logo"/>
+
+        <com.space.smarthive.views.HiveInfoItemCom
+            android:id="@+id/hive_com"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.space.smarthive.views.HiveInfoItemCom
+            android:id="@+id/hive_com2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.space.smarthive.views.HiveInfoItemCom
+            android:id="@+id/hive_com3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--
+        <com.space.smarthive.views.HiveInfoItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:name="湿度"
+            app:value="57.6% rh"
+            app:logo="@id/hiveman_logo"/>
+
+        <com.space.smarthive.views.HiveInfoItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:name="蜂箱重量"
+            app:value="32.16kg"
+            app:logo="@id/hiveman_logo"/>
+        -->
+
+    </LinearLayout>
+
+
+</ScrollView>
