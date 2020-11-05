@@ -34,6 +34,34 @@ public class HivesFragment extends Fragment {
     private static final String TAG = "HivesFragment";
     private FragmentHivesBinding viewBinding;
 
+    class ScanProc implements Runnable{
+        private BluetoothLeScanner bleScanner;
+        private ScanSettings scanSettings;
+        private ScanCallback callback;
+
+        public ScanProc(BluetoothLeScanner sc, ScanSettings sett, ScanCallback cb){
+            this.bleScanner = sc;
+            this.scanSettings = sett;
+            this.callback = cb;
+        }
+
+        /**
+         * 扫描 4 秒自动结束
+         */
+        @Override
+        public void run() {
+            bleScanner.startScan(null, scanSettings, callback);
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            bleScanner.stopScan(callback);
+        }
+    }
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -133,7 +161,8 @@ public class HivesFragment extends Fragment {
         if (scanner==null){
             scanner=btAdapter.getBluetoothLeScanner();
         }
-        scanner.startScan(null, settBuilder.build(), scanCallback);
+        //scanner.startScan(null, settBuilder.build(), scanCallback);
+        new Thread(new ScanProc(scanner, settBuilder.build(), scanCallback)).start();
     }
 
     @Override

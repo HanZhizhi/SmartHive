@@ -1,6 +1,8 @@
 package com.space.smarthive.myhives;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.space.smarthive.R;
+import com.space.smarthive.hivemanage.HivemanActivity;
 import com.space.smarthive.viewer.WebViewer;
 
 import java.util.ArrayList;
@@ -58,13 +61,26 @@ public class HiveListAdapter extends RecyclerView.Adapter<HiveHolder> {
     @Override
     public void onBindViewHolder(@NonNull HiveHolder holder, int position) {
         String name = data.get(position).device.getName();
-        holder.bleName.setText(name == null ? "unnamed" : name);
+        if (name == null) name = "未命名蜂箱";
+        holder.bleName.setText(name);
         holder.bleAddress.setText(data.get(position).device.getAddress());
 
+        String finalName = name;
         holder.itemView.setOnClickListener(v -> {
-            WebViewer.start(context, "Dsd", "dsds");
+            startHiveMan(finalName);
             Log.i(TAG, "onBindViewHolder: hive item clicked");
         });
+    }
+
+    /*
+     启动蜂箱管理页面
+     */
+    private void startHiveMan(String hiveName){
+        Bundle hiveData = new Bundle();
+        hiveData.putString("hive_name", hiveName);
+        Intent hmIntent = new Intent(context, HivemanActivity.class);
+        hmIntent.putExtras(hiveData);
+        context.startActivity(hmIntent);
     }
 
 

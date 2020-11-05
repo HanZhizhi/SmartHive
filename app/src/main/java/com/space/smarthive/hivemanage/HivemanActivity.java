@@ -2,13 +2,15 @@ package com.space.smarthive.hivemanage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
+import com.space.smarthive.BaseActivity;
 import com.space.smarthive.R;
 import com.space.smarthive.databinding.ActivityHivemanBinding;
 
-public class HivemanActivity extends AppCompatActivity {
+public class HivemanActivity extends BaseActivity {
     ActivityHivemanBinding viewBinding;
 
     @Override
@@ -22,4 +24,5 @@ public class HivemanActivity extends AppCompatActivity {
         viewBinding.hiveCom2.setValues("湿度", "65.7% rh");
         viewBinding.hiveCom3.setValues("蜂箱重量", "23kg");
     }
+
 }
