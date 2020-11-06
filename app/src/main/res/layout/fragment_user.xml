@@ -18,30 +18,65 @@
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/hiveman_icon"
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:src="@mipmap/frag_user_avator"
+        android:layout_marginTop="24dp"
+        android:padding="16dp"
         android:layout_gravity="center"
-        android:layout_margin="40dp" />
+        android:background="@color/pureWhite"
+        android:scaleType="fitCenter"/>
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/frag_user_ask"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:paddingLeft="12dp"
-        android:layout_marginTop="80dp"
-        android:text="联系专家"
-        android:textSize="22sp"
-        android:drawableLeft="@mipmap/hiveman_icon"
-        android:drawableTintMode="multiply"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:padding="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/pureWhite">
 
-    <TextView
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:src="@mipmap/frag_user_ask"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="联系专家"
+            android:textColor="#000"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/frag_user_sett"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:paddingLeft="12dp"
-        android:layout_marginTop="28dp"
-        android:text="设置"
-        android:textSize="22sp"
-        android:drawableLeft="@mipmap/hiveman_icon"
-        android:drawableTintMode="add"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/pureWhite">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:src="@mipmap/frag_user_setting"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="设置"
+            android:textColor="#000"
+            android:textSize="20sp"/>
+    </LinearLayout>
 
 </LinearLayout>
