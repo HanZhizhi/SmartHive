@@ -1,5 +1,7 @@
 package com.space.smarthive.user;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.space.smarthive.R;
+import com.space.smarthive.consult.ConsultActivity;
 import com.space.smarthive.data.Feed;
 import com.space.smarthive.databinding.FragmentUserBinding;
 import com.space.smarthive.info.FeedsAdapter;
@@ -27,6 +30,8 @@ import java.util.List;
 public class UserFragment extends Fragment {
     private FragmentUserBinding viewBinding;
     private static final String TAG = "UserFragment";
+
+    private Context context;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,6 +67,9 @@ public class UserFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        context = getActivity();
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -73,6 +81,11 @@ public class UserFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         viewBinding = FragmentUserBinding.inflate(inflater, container, false);
+
+        viewBinding.fragUserAsk.setOnClickListener(v -> {
+            Intent askIntent = new Intent(context, ConsultActivity.class);
+            startActivity(askIntent);
+        });
 
         return viewBinding.getRoot();
     }

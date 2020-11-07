@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import com.space.smarthive.home.HomeActivity;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
     private static final String TAG = "SplashActivity";
     private static final int REQUEST_LOCATION_PERMISSON = 2345;
     private static final int OPEN_BLUETOOTH = 3456;
