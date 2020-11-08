@@ -1,4 +1,4 @@
-package com.space.smarthive.info;
+package com.space.smarthive.f_feed;
 
 import android.util.Log;
 

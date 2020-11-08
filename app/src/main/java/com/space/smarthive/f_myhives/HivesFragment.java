@@ -1,4 +1,4 @@
-package com.space.smarthive.myhives;
+package com.space.smarthive.f_myhives;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -8,7 +8,6 @@ import android.bluetooth.le.ScanCallback;
 import android.bluetooth.le.ScanResult;
 import android.bluetooth.le.ScanSettings;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -21,9 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.space.smarthive.R;
 import com.space.smarthive.databinding.FragmentHivesBinding;
-import com.space.smarthive.hivemanage.HivemanActivity;
 
 /**
  * A simple {@link Fragment} subclass.

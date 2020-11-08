@@ -19,13 +19,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.智能蜂箱">
-        <activity android:name=".consult.ConsultActivity"></activity>
+        <activity
+            android:name=".login.ui.login.LoginActivity"
+            android:label="@string/title_activity_login"></activity>
+        <activity android:name=".consult.ConsultActivity" />
         <activity android:name=".viewer.WebViewer" />
         <activity android:name=".hivemanage.HivemanActivity" />
         <activity
             android:name=".home.HomeActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/SplashNoTitle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

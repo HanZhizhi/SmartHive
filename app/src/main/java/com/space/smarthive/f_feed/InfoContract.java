@@ -1,4 +1,4 @@
-package com.space.smarthive.info;
+package com.space.smarthive.f_feed;
 
 import com.space.smarthive.BasePresenter;
 import com.space.smarthive.BaseView;

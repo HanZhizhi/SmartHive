@@ -1,4 +1,4 @@
-package com.space.smarthive.info;
+package com.space.smarthive.f_feed;
 
 import android.content.Context;
 import android.util.Log;
@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.space.smarthive.R;
 import com.space.smarthive.data.Feed;
-import com.space.smarthive.hivemanage.HivemanActivity;
 import com.space.smarthive.viewer.WebViewer;
 
 import java.util.ArrayList;

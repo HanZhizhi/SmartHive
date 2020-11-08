@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".info.InfoFragment"
+    tools:context=".f_feed.InfoFragment"
     android:background="#ddd">
 
     <androidx.appcompat.widget.Toolbar

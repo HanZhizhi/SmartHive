@@ -1,10 +1,8 @@
-package com.space.smarthive.info;
+package com.space.smarthive.f_feed;
 
 import android.content.Context;
-import android.graphics.Rect;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,12 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.space.smarthive.R;
 import com.space.smarthive.data.Feed;
-import com.space.smarthive.databinding.FragmentHivesBinding;
 import com.space.smarthive.databinding.FragmentInfoBinding;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

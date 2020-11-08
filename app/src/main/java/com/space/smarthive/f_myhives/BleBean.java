@@ -1,4 +1,4 @@
-package com.space.smarthive.myhives;
+package com.space.smarthive.f_myhives;
 
 import android.bluetooth.BluetoothDevice;
 

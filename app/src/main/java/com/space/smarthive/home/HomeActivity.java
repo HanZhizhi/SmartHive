@@ -13,9 +13,9 @@ import android.view.View;
 import com.gyf.immersionbar.ImmersionBar;
 import com.space.smarthive.R;
 import com.space.smarthive.databinding.ActivityHomeBinding;
-import com.space.smarthive.info.InfoFragment;
-import com.space.smarthive.myhives.HivesFragment;
-import com.space.smarthive.user.UserFragment;
+import com.space.smarthive.f_feed.InfoFragment;
+import com.space.smarthive.f_myhives.HivesFragment;
+import com.space.smarthive.f_user.UserFragment;
 import com.space.smarthive.utils.ColorUtil;
 
 import java.util.ArrayList;
